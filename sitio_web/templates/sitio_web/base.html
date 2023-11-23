@@ -1,0 +1,133 @@
+<html>
+
+<head>
+
+  {% load static %}
+
+    <!-- Bootstrap -->
+    <link href="{% static 'sitio_web/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    
+
+     <!-- Fonts -->
+    
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    <!-- Styles -->
+    <link href="{% static 'sitio_web/css/gestion.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="masthead text-center text-white">
+    <div class="masthead-content">
+      <div class="container">
+        <h1 class="masthead-heading mb-0">Bienvenido a Libra</h1>
+        <a style="color: white" href="{% url 'Home' %}"> <h2 class="masthead-subheading mb-0">Tu balanza de calorías</h2></a>
+      </div>
+    </div>
+    
+  </header>
+  </div>
+
+  <div style="text-align: right; margin-right: 100 px; color: white">
+    {% if user.is_authenticated %}
+      <p>Hola, {{user.username}}</p>
+  
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle mb-4" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black; margin-left: 30px;">
+        Mi cuenta
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="{% url 'Perfil' %}">Perfil</a>
+        <a class="dropdown-item" href="{% url 'Historial' %}">Historial de balanzas</a>
+        <a class="dropdown-item" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a>
+      </div>
+    </div>
+    {% else %}
+      <a class="nav-link active" style="color:white; text-align: right;" aria-current="page" href="{% url 'loguear' %}">Login</a>
+      <a class="nav-link active" style="color:white; text-align: right;" aria-current="page" href="{% url 'Autenticacion' %}">Registrate</a>
+      {% endif %}
+  </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #60C43E;">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      {% if user.is_authenticated %}
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin: auto">
+          <li class="nav-item">
+            <button class="btn btn-success" style="margin-bottom:15px; margin-right: 15px; color: white;">
+              <a href="{% url 'Porcion' %}" class="btn btn success" style="color: white">Contanos que comiste hoy</a>
+            </button>
+          <li class="nav-item">
+            <button class="btn btn-success" style="margin-bottom:15px; margin-left: 15px; margin-right: 15px; color: white">
+              <a href="{% url 'sesion_ejercicio' %}" class="btn btn success" style="color: white">Contanos como te ejercitaste</a>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-success" style="margin-bottom:15px;  margin-left: 15px; margin-right: 15px; color: white">
+              <a href="{% url 'Balanza' %}" class="btn btn success" style="color: white">Vamos directo a la balanza</a>
+            </button>            
+          </li>
+        </ul>
+      </div>
+      {% else %}
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="text-align: right; margin-right: 100 px; color: white">
+          <li class="nav-item">
+            <div class="alert alert-danger" style="text-align: right;">
+              Debes iniciar sesión para ver las opciones
+            </div>
+          </li>
+        </ul>
+      {% endif %}
+      </div>
+    </div>
+  </nav>
+    
+{% block content %}
+
+<!--Contenido variable-->
+
+{% endblock %}
+
+    <footer class="footer text-faded text-center py-5" style="background-color: #60C43E;">
+        <div class="container">
+          <p class="m-0">
+              <a href="#" class="link">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              <a href="#" class="link">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              <a href="#" class="link">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </p>
+          <p class="m-0 mbt">
+              <a href="sample.html" class="link">Política de privacidad</a> ·
+              <a href="sample.html" class="link">Aviso legal</a> ·
+              <a href="sample.html" class="link">Cookies</a>
+          </p>
+          <p class="m-0 mbt1">&copy; Librapp 2023</p>
+        </div>
+      </footer>
+  
+      <!-- Bootstrap -->
+      <script src="{% static 'sitio_web/vendor/jquery/jquery.min.js' %}"></script>
+      <script src="{% static 'sitio_web/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="bootstrap.bundle.min.js / bootstrap.bundle.js"></script>
+      
+  
+  </body>
+  
+  
+  </html>
