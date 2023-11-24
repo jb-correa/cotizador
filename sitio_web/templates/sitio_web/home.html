@@ -16,12 +16,18 @@
 
     {% block content %}
 
-    <div class="container" style="margin: auto; text-align: center;"></div>
+    <div class="container" style="margin: auto; text-align: center;">
          
       <form action="" method="">
-        <input type="text" placeholder="Ingresa el nombre del producto">
-        
+        <label style="color: white; text-align: center;margin-top: 50px;"> Ingresa el nombre del producto</label>
+        <br>
+        <input type="text" placeholder="Ingresa el nombre del producto" style="width: 35%;">
+        <br>
+        <button class="btn btn-success" type="submit" style="margin-top: 10px;">Buscar</button>
       </form>
+
+    </div>
+
     {% endblock %}
 
 </body>
