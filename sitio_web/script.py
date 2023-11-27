@@ -17,7 +17,7 @@ from .models import Producto
 
 
 
-class test(unittest.TestCase):
+class busqueda(unittest.TestCase, "nombre_producto"):
     def setUp(self):
         self.driver = webdriver.Chrome(ChromeDriverManager().install())
     
@@ -25,16 +25,15 @@ class test(unittest.TestCase):
         driver = self.driver
         driver.get("https://www.mercadolibre.com.ar/")
 
-
-        
+     
         input = driver.find_element(By.ID, "cb1-edit")
         input.click()
-        input.send_keys("iphone")
-
-
-        input2 = driver.find_element(By.NAME, "vat4")
-        button= driver.find_element(By.NAME, "submit")
-        driver.implicitly_wait(3)
+        input.send_keys("nombre_producto")
+        time.sleep(3)
+        button = driver.find_element(By.XPATH, "//div[@aria-label='Buscar']")
+        button.click()
+        time.sleep(3)
+        
         
         
         
