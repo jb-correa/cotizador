@@ -11,4 +11,4 @@ def home(request):
             form.save()
             redirect("Home")
         
-    return render(request, 'sitio_web/home.html') 
+    return render(request, 'sitio_web/home.html', {"form": form}) 
