@@ -33,6 +33,8 @@ class busqueda(unittest.TestCase, Producto):
         button = driver.find_element(By.XPATH, "//div[@aria-label='Buscar']")
         button.click()
         time.sleep(3)
+
+        
     
         return Producto
         
