@@ -17,7 +17,7 @@ from .models import Producto
 
 
 
-class busqueda(unittest.TestCase, "nombre_producto"):
+class busqueda(unittest.TestCase, Producto):
     def setUp(self):
         self.driver = webdriver.Chrome(ChromeDriverManager().install())
     
@@ -28,11 +28,13 @@ class busqueda(unittest.TestCase, "nombre_producto"):
      
         input = driver.find_element(By.ID, "cb1-edit")
         input.click()
-        input.send_keys("nombre_producto")
+        input.send_keys(Producto.nombre)
         time.sleep(3)
         button = driver.find_element(By.XPATH, "//div[@aria-label='Buscar']")
         button.click()
         time.sleep(3)
+    
+        return Producto
         
         
         
