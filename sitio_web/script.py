@@ -34,7 +34,7 @@ class busqueda(unittest.TestCase, Producto):
         button.click()
         time.sleep(3)
 
-        
+        price=driver.find_element(By.CLASS_NAME, "andes-money-amount__fraction")
     
         return Producto
         

@@ -11,6 +11,7 @@ def home(request):
         if form.is_valid():
             producto=form.save(commit=False)
             producto=busqueda(producto)
+            
 
             redirect("Home")
         
