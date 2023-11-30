@@ -35,6 +35,7 @@ class busqueda(unittest.TestCase, Producto):
         time.sleep(3)
 
         price=driver.find_element(By.CLASS_NAME, "andes-money-amount__fraction")
+        price.get_attribute("text")
     
         return Producto
         
