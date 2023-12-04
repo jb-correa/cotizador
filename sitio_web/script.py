@@ -17,36 +17,3 @@ from .models import Producto
 
 
 
-class busqueda(unittest.TestCase, Producto):
-    def setUp(self):
-        self.driver = webdriver.Chrome(ChromeDriverManager().install())
-    
-    def test_search_in_python_org(self):
-        driver = self.driver
-        driver.get("https://www.mercadolibre.com.ar/")
-
-     
-        input = driver.find_element(By.ID, "cb1-edit")
-        input.click()
-        input.send_keys(Producto.nombre)
-        time.sleep(3)
-        button = driver.find_element(By.XPATH, "//div[@aria-label='Buscar']")
-        button.click()
-        time.sleep(3)
-
-        price=driver.find_element(By.CLASS_NAME, "andes-money-amount__fraction")
-        price.get_attribute("text")
-    
-        return Producto
-        
-        
-        
-        
-
-        
-
-    def tearDown(self):
-        self.driver.close()
-
-if __name__ == "__main__":
-    unittest.main()
