@@ -1,7 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from .models import Producto
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium import webdriver
+import chromedriver_binary 
+
 
 driver = webdriver.Chrome()
 driver.get("http://www.python.org")
