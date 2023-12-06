@@ -8,7 +8,9 @@ input=driver.find_element(By.ID,"cb1-edit")
 input.click()
 input.send_keys("telefono samsung")
 button=driver.find_element(By.XPATH,"//div[@aria-label='Buscar']")
-
 button.click()
+
+#Encontrar la forma de ubicar primeros cinco elementos
+
 driver.implicitly_wait(5)
 driver.close()
