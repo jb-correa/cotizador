@@ -1,17 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium import webdriver
-import chromedriver_binary 
-
 
 driver = webdriver.Chrome()
-driver.get("http://www.python.org")
-assert "Python" in driver.title
-elem = driver.find_element(By.NAME, "q")
-elem.clear()
-elem.send_keys("pycon")
-elem.send_keys(Keys.RETURN)
-assert "No results found." not in driver.page_source
-driver.close()
+driver.get("http://www.mercadolibre.com.ar")
+input=driver.find_element(By.ID,"cb1-edit")
+input.click()
+input.send_keys("telefono samsung")
+driver.implicitly_wait(5)
+driver.quit()
