@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+import re
 
 driver = webdriver.Chrome()
 driver.get("http://www.mercadolibre.com.ar")
@@ -13,7 +14,8 @@ result=driver.find_element(By.XPATH,"//h2[contains(text(),'Samsung Galaxy A33 5g
 result.click()
 driver.switch_to.new_window('tab')
 html=driver.page_source
-print(html)
+numero=re.search(r'\d', html)
+print(numero)
 
 #Encontrar la forma de ubicar primeros cinco elementos
 
