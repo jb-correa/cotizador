@@ -13,12 +13,18 @@ input.click()
 input.send_keys("telefono samsung")
 button=driver.find_element(By.XPATH,"//div[@aria-label='Buscar']")
 button.click()
-result=driver.find_element(By.XPATH,"//h2[contains(text(),'Samsung Galaxy A33 5g 128 Gb Awesome Black 6 Gb Ra')]")
+result=driver.find_element(By.XPATH,"")
 result.click()
 
-time.sleep(5)
-html=driver.page_source
-print(html)
+price=driver.find_element(By.CSS_SELECTOR,"span[class='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact'] span[class='andes-money-amount__fraction']")
+
+print(price.text)
+#time.sleep(5)
+#html=driver.page_source
+#if html.__contains__("199.999"):
+#    print("El precio es correcto")
+#else:
+#    print("El precio es incorrecto")
 
 
 #Encontrar la forma de ubicar primeros cinco elementos
