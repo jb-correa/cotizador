@@ -13,20 +13,15 @@ input.click()
 input.send_keys("telefono samsung")
 button=driver.find_element(By.XPATH,"//div[@aria-label='Buscar']")
 button.click()
+
+#El método de búsqueda está fallando a veces pq en el XPATH hay una parte del nombre del artículo
+#Hay que encontrar una búsqueda genérica
+#Hay que encontrar forma de buscar en loop los elementos de la lista
 result=driver.find_element(By.XPATH,"")
 result.click()
 
 price=driver.find_element(By.CSS_SELECTOR,"span[class='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact'] span[class='andes-money-amount__fraction']")
 
 print(price.text)
-#time.sleep(5)
-#html=driver.page_source
-#if html.__contains__("199.999"):
-#    print("El precio es correcto")
-#else:
-#    print("El precio es incorrecto")
-
-
-#Encontrar la forma de ubicar primeros cinco elementos
 
 driver.close()
