@@ -8,25 +8,21 @@ import time
 driver = webdriver.Chrome()
 driver.get("http://www.mercadolibre.com.ar")
 driver.maximize_window()
-input=driver.find_element(By.ID,"cb1-edit")
-input.click()
+input=driver.find_element(By.ID,"cb1-edit").click()
 input.send_keys("telefono samsung")
-button=driver.find_element(By.XPATH,"//div[@aria-label='Buscar']")
-button.click()
+button=driver.find_element(By.XPATH,"//div[@aria-label='Buscar']").click()
 
-#El método de búsqueda está fallando a veces pq en el XPATH hay una parte del nombre del artículo
-#Hay que encontrar una búsqueda genérica
+
 #Hay que encontrar forma de buscar en loop los elementos de la lista
-results=driver.find_elements(By.CLASS_NAME,"ui-search-item__title")
+result=driver.find_element(By.CLASS_NAME,"ui-search-item__title").click()
 
-del results[len(results): len(results)- len(results)-5]
 
-print (*results, sep="\n")
+price=driver.find_element(By.CSS_SELECTOR,"span[class='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact'] span[class='andes-money-amount__fraction']")
 
-#price=driver.find_element(By.CSS_SELECTOR,"span[class='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact'] span[class='andes-money-amount__fraction']")
 
-#print(price.text)
 
-#driver.back()
+print(price.text)
+
+driver.back()
 
 driver.close()
