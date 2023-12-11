@@ -19,7 +19,7 @@ button.click()
 #Hay que encontrar forma de buscar en loop los elementos de la lista
 results=driver.find_elements(By.CLASS_NAME,"ui-search-item__title")
 
-results.pop(4)
+del results[len(results): len(results)- len(results)-5]
 
 print (*results, sep="\n")
 
