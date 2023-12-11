@@ -17,7 +17,7 @@ button.click()
 #El método de búsqueda está fallando a veces pq en el XPATH hay una parte del nombre del artículo
 #Hay que encontrar una búsqueda genérica
 #Hay que encontrar forma de buscar en loop los elementos de la lista
-result=driver.find_element(By.XPATH,"")
+result=driver.find_element(By.XPATH,"//h2[normalize-space()='Samsung Galaxy A34 128gb 6gb Ram Awesome Graphite']")
 result.click()
 
 price=driver.find_element(By.CSS_SELECTOR,"span[class='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact'] span[class='andes-money-amount__fraction']")
