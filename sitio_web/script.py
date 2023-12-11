@@ -17,13 +17,16 @@ button.click()
 #El método de búsqueda está fallando a veces pq en el XPATH hay una parte del nombre del artículo
 #Hay que encontrar una búsqueda genérica
 #Hay que encontrar forma de buscar en loop los elementos de la lista
-result=driver.find_element(By.CLASS_NAME,"ui-search-item__title")
-result.click()
+results=driver.find_elements(By.CLASS_NAME,"ui-search-item__title")
 
-price=driver.find_element(By.CSS_SELECTOR,"span[class='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact'] span[class='andes-money-amount__fraction']")
+results.pop(4)
 
-print(price.text)
+print (*results, sep="\n")
 
+#price=driver.find_element(By.CSS_SELECTOR,"span[class='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact'] span[class='andes-money-amount__fraction']")
 
+#print(price.text)
+
+#driver.back()
 
 driver.close()
