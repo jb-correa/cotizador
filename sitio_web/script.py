@@ -17,7 +17,7 @@ button.click()
 
 
 #El loop funciona
-#Hay que encontrar la forma de que busque más abajo en la lista
+#Hay que encontrar la forma de que no siempre encuentre el mismo elemento
 count=0
 precios=[]
 while count<=5:
