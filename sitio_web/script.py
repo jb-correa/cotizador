@@ -20,10 +20,15 @@ button.click()
 #Hay que encontrar la forma de que no siempre encuentre el mismo elemento
 count=0
 precios=[]
+titulo=""
 while count<=5:
 
     result=driver.find_element(By.CLASS_NAME,"ui-search-item__title")
-    result.click()
+    if titulo==result.text:
+        #Buscar la forma de que no se repita el mismo elemento
+        result.click()
+        titulo=result.text
+        
     price=driver.find_element(By.CSS_SELECTOR,"span[class='andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact'] span[class='andes-money-amount__fraction']")
     precios.append(price.text)
     count+=1
