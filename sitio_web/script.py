@@ -26,14 +26,13 @@ print(precios)
 
 for precio in precios:
 
+    #No funciona el replace
     if ("." in precio):
-        precio.replace(".","")
+        precio=precio.replace(".", "")
 
     #if(int(precio)< (max(precios)*30/100)):
-        precios.remove(precio)
+    #    precios.remove(precio)
 
 print(precios)
-
-
 
 driver.close()
