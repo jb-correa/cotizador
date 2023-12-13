@@ -5,6 +5,8 @@ from django.forms import ModelForm
 class Producto(models.Model):
     nombre=models.CharField(max_length=50)
     precio_promedio=models.FloatField(null=True)
+    precio_maximo=models.FloatField(null=True)
+    precio_minimo=models.FloatField(null=True)  
     created=models.DateField(auto_now_add=True)  
     precios = models.FloatField(max_length=200, null=True)
 
