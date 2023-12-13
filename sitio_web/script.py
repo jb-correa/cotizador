@@ -19,19 +19,21 @@ button.click()
 
 precios=[]
 numeros=driver.find_elements(By.CLASS_NAME, "andes-money-amount__fraction")
+
+#Quita el punto del precio y convierte en int
 for numero in numeros:
-    precios.append(numero.text)
+    numero=numero.text.replace(".", "")
+    numero=int(numero)
+    precios.append(numero)
 
 print(precios)
 
+#Quita precios falopa sacando menores al 30% del maximo
+maximo=max(precios)
+print(maximo)
 for precio in precios:
-
-    #No funciona el replace
-    if ("." in precio):
-        precio=precio.replace(".", "")
-
-    #if(int(precio)< (max(precios)*30/100)):
-    #    precios.remove(precio)
+    if(precio <= int(maximo*0.2)):
+        precios.remove(precio)
 
 print(precios)
 
