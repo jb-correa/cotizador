@@ -22,10 +22,14 @@ numeros=driver.find_elements(By.CLASS_NAME, "andes-money-amount__fraction")
 for numero in numeros:
     precios.append(numero.text)
 
+print(precios)
 
 for precio in precios:
 
-    if(int(precio)< (max(precios)*30/100)):
+    if ("." in precio):
+        precio.replace(".","")
+
+    #if(int(precio)< (max(precios)*30/100)):
         precios.remove(precio)
 
 print(precios)
