@@ -5,6 +5,9 @@ from selenium.webdriver.common.by import By
 import re
 import time
 
+def busqueda():
+    pass
+
 driver = webdriver.Chrome()
 driver.get("http://www.mercadolibre.com.ar")
 driver.maximize_window()

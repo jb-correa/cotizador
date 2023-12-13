@@ -2,6 +2,7 @@ import json
 from django.db import models
 from django.forms import ModelForm
 
+
 class Producto(models.Model):
     nombre=models.CharField(max_length=50)
     precio_promedio=models.FloatField(null=True)
