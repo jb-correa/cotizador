@@ -18,10 +18,12 @@ button.click()
 count=0
 precios=[]
 
-for numero in driver.find_elements(By.CLASS_NAME, "andes-money-amount__fraction"):
+numeros=driver.find_elements(By.CLASS_NAME, "andes-money-amount__fraction")
+
+for numero in numeros:
     precios.append(numero.text)
 
-
+precios=precios[:len(precios)//2]
 
 print(precios)
 
