@@ -29,10 +29,12 @@ for numero in numeros:
 print(precios)
 
 #Quita precios falopa sacando menores al 30% del maximo
+#Solucionar esto antes de encontrar promedio y elnazar con views
 maximo=max(precios)
-print(maximo)
+tope_minimo=maximo*0.3
+print(tope_minimo)
 for precio in precios:
-    if(precio <= int(maximo*0.2)):
+    if(precio < tope_minimo):
         precios.remove(precio)
 
 print(precios)
