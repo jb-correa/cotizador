@@ -11,19 +11,22 @@ driver.maximize_window()
 input=driver.find_element(By.ID,"cb1-edit")
 input.click()
 input.clear()
+
+#Aqui hay que insertar el nombre del objeto ingresado en el sitio
 input.send_keys("telefono samsung")
 button=driver.find_element(By.XPATH,"//div[@aria-label='Buscar']")
 button.click()
 
-count=0
 precios=[]
-
 numeros=driver.find_elements(By.CLASS_NAME, "andes-money-amount__fraction")
-
 for numero in numeros:
     precios.append(numero.text)
 
-precios=precios[:len(precios)//2]
+
+for precio in precios:
+
+    if(int(precio)< (max(precios)*30/100)):
+        precios.remove(precio)
 
 print(precios)
 
