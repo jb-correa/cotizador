@@ -35,11 +35,10 @@ print(precios)
 #Solucionar esto antes de encontrar promedio y elnazar con views
 maximo=max(precios)
 print(maximo)
-tope_minimo=maximo*0.3
+tope_minimo=maximo*0.2
 print(tope_minimo)
 for precio in precios:
     if(precio < tope_minimo):
-        print(precio)
         precios.remove(precio)
 
 print(precios)
