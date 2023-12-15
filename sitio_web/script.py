@@ -43,6 +43,8 @@ def busqueda(producto):
             precios.remove(precio)
 
     print(precios)
+    producto.precio_promedio=sum(precios)/len(precios)
+    
 
     driver.close()
 
