@@ -14,7 +14,7 @@ def home(request):
             producto=busqueda(producto)
             producto.save()
 
-            redirect("Home")
+            return ("Resultado")
         
     return render(request, 'sitio_web/home.html', {"form": form}) 
 
