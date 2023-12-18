@@ -1,0 +1,44 @@
+html>
+
+<head>
+
+  <title>Resultado</title>
+
+</head>
+
+{% extends "sitio_web/base.html" %}
+
+<body>
+
+  
+
+    {% load static %}
+    {% load crispy_forms_tags %}
+
+    {% block content %}
+    <table class="table" style="color: white; margin-bottom: 300px;">
+      <thead>
+        <tr>
+          <th scope="col" style="text-align: center;">Fecha de la busqueda</th>
+          <th scope="col" style="text-align: center;">Resultado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" style="text-align: center;" >
+          {% for historia in historial %}
+            <p style=" color: white">{{historia.fecha}}</p>
+          {% endfor %}
+          </th>
+          <th style="text-align: center;">
+          {% for historia in historial %}
+            <p style=" color: white">{{historia.resultado}}</p>
+          {% endfor %}
+        </th>
+        </tr>
+      </tbody>
+    </table>
+  
+    {% endblock %}
+
+</body>

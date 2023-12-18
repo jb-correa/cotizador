@@ -17,3 +17,9 @@ def home(request):
             redirect("Home")
         
     return render(request, 'sitio_web/home.html', {"form": form}) 
+
+
+def resultado(request):
+    productos=Producto.objects.all()
+    producto=producto[len(producto)-1]
+    return render(request, 'sitio_web/resultado.html', {"producto": producto}   )
