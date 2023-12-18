@@ -21,5 +21,5 @@ def home(request):
 
 def resultado(request):
     productos=Producto.objects.all()
-    producto=producto[len(producto)-1]
+    producto=productos[len(producto)-1]
     return render(request, 'sitio_web/resultado.html', {"producto": producto}   )
