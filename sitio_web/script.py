@@ -4,6 +4,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import re
 import time
+from django.http import JsonResponse
+import httpx
 
 def busqueda(producto):
     driver = webdriver.Chrome()
