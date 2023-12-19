@@ -11,7 +11,7 @@ def home(request):
         form=productoForm(request.POST)
         if form.is_valid():
             producto=form.save()
-            producto=busqueda(producto)
+            producto=busqueda(producto, request)
             producto.save()
 
             return ("Resultado")
