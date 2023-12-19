@@ -10,7 +10,7 @@ def home(request):
     if request.method == 'POST':
         form=productoForm(request.POST)
         if form.is_valid():
-            producto=form.save(commit=False)
+            producto=form.save()
             producto=busqueda(producto)
             producto.save()
 
@@ -20,6 +20,7 @@ def home(request):
 
 
 def resultado(request):
+    producto=Producto()
     productos=Producto.objects.all()
     producto=productos[len(producto)-1]
     return render(request, 'sitio_web/resultado.html', {"producto": producto}   )
