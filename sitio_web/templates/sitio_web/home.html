@@ -20,7 +20,8 @@
 
     <div class="container" style="margin: auto; text-align: center;">
          
-      <form action="" method="">
+      <form action="" method="post">
+        {% csrf_token %}
         <label style="color: white; text-align: center;margin-top: 50px;"> Ingresa el nombre del producto</label>
         <br>
         <h5 style="color: white; text-align: center;margin-top: 15px;">
