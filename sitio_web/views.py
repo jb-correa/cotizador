@@ -20,7 +20,7 @@ def home(request):
 
 
 def resultado(request):
-    producto=Producto()
-    productos=Producto.objects.all()
-    producto=productos[len(productos)-1]
-    return render(request, 'sitio_web/resultado.html', {"producto": producto}   )
+    
+
+    
+    return render(request, 'sitio_web/resultado.html' )
