@@ -13,13 +13,14 @@ def home(request):
             producto=form.save()
             producto=busqueda(producto, request)
             producto.save()
+            precios=Producto.objects.all()
 
             return ("Resultado")
         
-    return render(request, 'sitio_web/home.html', {"form": form}) 
+    return render(request, 'sitio_web/home.html', {"form": form,"precios": precios }) 
 
 
 def resultado(request):
-    
+    precios=Producto.objects.all()
 
-    return render(request, 'sitio_web/resultado.html' )
+    return render(request, 'sitio_web/resultado.html' , {"precios": precios} )
