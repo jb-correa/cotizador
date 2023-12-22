@@ -17,7 +17,7 @@ def home(request):
 
             return ("Resultado")
         
-    return render(request, 'sitio_web/home.html', {"form": form,"precios": precios }) 
+    return render(request, 'sitio_web/home.html', {"form": form}) 
 
 
 def resultado(request):

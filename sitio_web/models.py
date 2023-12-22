@@ -10,7 +10,7 @@ class Producto(models.Model):
     precio_minimo=models.FloatField(null=True)  
     created=models.DateField(auto_now_add=True)  
     #Encontrar forma de hacer OneToMany
-    precios = models.OneToMany( on_delete=models.CASCADE, to='precios')
+    precios = models.CharField(max_length=100, null=True)
 
     def set_precios(self, x):
         self.precios = json.dumps(x)
