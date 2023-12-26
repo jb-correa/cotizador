@@ -3,6 +3,8 @@ from django.db import models
 from django.shortcuts import render, redirect
 from .models import productoForm, Producto
 from .script import busqueda
+from django.http import JsonResponse
+import httpx
 
 
 def home(request):
@@ -18,6 +20,12 @@ def home(request):
             return ("Resultado")
         
     return render(request, 'sitio_web/home.html', {"form": form}) 
+
+
+async def busqueda(request):
+    
+
+    return render(request, 'sitio_web/busqueda.html')
 
 
 def resultado(request):
