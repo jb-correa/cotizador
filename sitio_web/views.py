@@ -10,7 +10,7 @@ def home(request):
     if request.method == 'POST':
         form=productoForm(request.POST)
         if form.is_valid():
-            producto=form.save()
+            producto=form.save(commit=False)
             producto=busqueda(producto, request)
             producto.save()
             precios=Producto.objects.all()
