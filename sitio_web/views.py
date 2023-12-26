@@ -5,7 +5,7 @@ from .models import productoForm, Producto
 from .script import busqueda
 from django.http import JsonResponse
 import httpx
-
+import script
 
 def home(request):
     form=productoForm()
@@ -23,9 +23,14 @@ def home(request):
 
 
 async def busqueda(request):
+
+    async with httpx.AsyncClient() as client:
+        response = await client.get(script.busqueda)
+        data = response.json()
+    return JsonResponse(data)
     
 
-    return render(request, 'sitio_web/busqueda.html')
+    
 
 
 def resultado(request):
