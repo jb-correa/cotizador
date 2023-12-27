@@ -16,7 +16,6 @@ def home(request):
             producto=form.save(commit=False)
             producto=busqueda(request, producto)
             producto.save()
-            precios=Producto.objects.all()
 
             return ("Resultado")
         
