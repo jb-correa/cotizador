@@ -3,6 +3,7 @@ from django.db import models
 from django.shortcuts import render, redirect
 from .models import productoForm, Producto
 from .script import busqueda
+from selenium.webdriver.common.by import By
 from django.http import JsonResponse
 import httpx
 from selenium import webdriver
@@ -69,9 +70,6 @@ async def busqueda(request, producto):
         driver.close()
 
         return producto
-
-   
-    
 
     
 
