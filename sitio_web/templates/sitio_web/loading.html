@@ -1,12 +1,35 @@
+<html>
+
+<head>
+
+  <title>Inicio</title>
+
+</head>
+
+{% extends "sitio_web/base.html" %}
+
+<body>
+
+  
+
+    {% load static %}
+
+    {% block content %}
+
+    
+    <div class="container" style="margin: auto; text-align: center;">
+        <h4 style="margin: auto; text-align: center; color: whitesmoke;">
+        Espera mientras hacemos tu busqueda</h4>
+        <div class="loader">
+            <div class="ball1"></div>
+            <div class="ball2"></div>
+            <div class="ball3"></div>
+          </div>
+    
+    </div>
+    {% endblock %}
+
+</body>
 
 
 
-
-
-
-
-<div class="loader">
-    <div class="ball1"></div>
-    <div class="ball2"></div>
-    <div class="ball3"></div>
-  </div>
