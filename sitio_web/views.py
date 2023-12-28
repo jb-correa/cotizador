@@ -68,8 +68,7 @@ async def busqueda(request, producto):
 
         driver.close()
 
-        return producto
-
+        return producto, render(request, 'sitio_web/loading.html') 
     
 
 
