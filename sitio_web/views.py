@@ -13,6 +13,7 @@ def home(request):
     if request.method == 'POST':
         form=productoForm(request.POST)
         if form.is_valid():
+            #El producto no esta persistiendo
             producto=form.save(commit=False)
             producto=busqueda(request, producto)
             producto.save()
