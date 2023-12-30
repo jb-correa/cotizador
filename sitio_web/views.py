@@ -15,7 +15,7 @@ def home(request):
         if form.is_valid():
             #El producto no esta persistiendo
             producto=form.save(commit=False)
-            producto=busqueda(request, producto)
+            producto=busqueda(request)
             producto.save()
 
             return ("Loading")
@@ -23,8 +23,8 @@ def home(request):
     return render(request, 'sitio_web/home.html', {"form": form}) 
 
 
-async def busqueda(request, producto):
-
+async def busqueda(request):
+    producto=Producto()
     async with httpx.AsyncClient() as client:
         driver = webdriver.Chrome()
         driver.get("http://www.mercadolibre.com.ar")
