@@ -76,4 +76,4 @@ async def busqueda(request, producto):
 def resultado(request):
     precios=Producto.objects.all()
 
-    return render(request, 'sitio_web/resultado.html' , {"precios": precios} )
+    return render(request, 'sitio_web/resultado.html'  )
