@@ -22,7 +22,7 @@ def home(request):
         
     return render(request, 'sitio_web/home.html', {"form": form}) 
 
-
+#El script funciona, solo hay que lograr que el producto persista
 async def busqueda(request):
     producto=Producto()
     async with httpx.AsyncClient() as client:
