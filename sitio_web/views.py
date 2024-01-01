@@ -15,7 +15,7 @@ def home(request):
         if form.is_valid():
             #El producto no esta persistiendo
             producto=form.save(commit=False)
-            producto=busqueda(request)
+            producto=busqueda(request, producto)
             producto.save()
 
             return ("Loading")
