@@ -14,6 +14,8 @@
 
     {% load static %}
 
+    
+    {% load crispy_forms_tags %}
     {% block content %}
 
     
@@ -26,11 +28,10 @@
         <h5 style="color: white; text-align: center;margin-top: 15px;">
         Trata de ser lo más específico posible para una mejor búsqueda!</h5>
 
-        <input type="text" placeholder="Ingresa el nombre del producto" style="width: 35%;" id="nombre" name="nombre">
-        <br>
-        <button class="btn btn-success" type="submit" style="margin-top: 10px;">
-          <a style="color:white" href="{% url 'Loading' %}">Buscar</a>
-          </button>
+        <div style="width: 75%; margin: auto;">
+          {{form|crispy}}
+         
+          <button type="submit" class="btn btn-success" style="text-align: center;">Ingresar</button>
       </form>
 
     </div>

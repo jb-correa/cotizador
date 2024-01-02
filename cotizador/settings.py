@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cotizador',
     'sitio_web',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

@@ -16,7 +16,6 @@ def home(request):
             #El producto no esta persistiendo
             producto=form.save()
             producto=busqueda(request, producto)
-            producto.save()
 
             return ("Loading")
         
