@@ -34,7 +34,7 @@ async def busqueda(request, producto):
         input.clear()
 
         #Aqui hay que insertar el nombre del objeto ingresado en el sitio
-        input.send_keys(producto.nombre_producto)
+        input.send_keys(producto.nombre)
         button=driver.find_element(By.XPATH,"//div[@aria-label='Buscar']")
         button.click()
 
