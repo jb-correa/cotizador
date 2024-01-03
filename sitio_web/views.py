@@ -23,7 +23,7 @@ def home(request):
 
 
 async def busqueda(request, producto):
-    producto=Producto()
+    
     async with httpx.AsyncClient() as client:
         driver = webdriver.Chrome()
         driver.get("http://www.mercadolibre.com.ar")
