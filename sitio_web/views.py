@@ -13,7 +13,7 @@ def home(request):
     if request.method == 'POST':
         form=productoForm(request.POST)
         if form.is_valid():
-            #El producto no esta persistiendo
+            
             producto=form.save()
             producto=busqueda(request, producto)
 
@@ -21,7 +21,7 @@ def home(request):
         
     return render(request, 'sitio_web/home.html', {"form": form}) 
 
-#El script funciona, solo hay que lograr que el producto persista
+
 async def busqueda(request, producto):
     producto=Producto()
     async with httpx.AsyncClient() as client:
