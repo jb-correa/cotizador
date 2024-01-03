@@ -15,11 +15,19 @@ def home(request):
         if form.is_valid():
             
             producto=form.save()
+            print(producto)
             producto=busqueda(request, producto)
 
             return ("Loading")
         
-    return render(request, 'sitio_web/home.html', {"form": form}) 
+    return render(request, 'sitio_web/home.html', {"form": form, "producto": producto}) 
+
+def loading(request, producto):
+
+    producto=busqueda(request, producto)
+    producto.save()
+
+    return render(request, 'sitio_web/loading.html')
 
 
 async def busqueda(request, producto):
@@ -68,7 +76,7 @@ async def busqueda(request, producto):
 
         driver.close()
 
-        return producto, render(request, 'sitio_web/loading.html') 
+        return producto
     
 
 
