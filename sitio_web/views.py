@@ -16,13 +16,14 @@ def home(request):
             
             producto=form.save()
             print(producto)
-            producto=busqueda(request, producto)
+            
 
             return ("Loading")
         
-    return render(request, 'sitio_web/home.html', {"form": form, "producto": producto}) 
+    return render(request, 'sitio_web/home.html', {"form": form}) 
 
-def loading(request, producto):
+def loading(request):
+    producto=Producto.objects.last()
 
     producto=busqueda(request, producto)
     producto.save()
