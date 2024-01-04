@@ -33,7 +33,7 @@ def loading(request):
 
 async def busqueda(request, producto):
     
-    async with httpx.AsyncClient() as client:
+    async with httpx.AsyncClient():
         driver = webdriver.Chrome()
         driver.get("http://www.mercadolibre.com.ar")
         driver.maximize_window()
@@ -55,17 +55,13 @@ async def busqueda(request, producto):
             numero=int(numero)
             precios.append(numero)
 
-        print(precios)
-
         #Quita precios falopa sacando menores al 30% del maximo
         #Solucionar esto antes de encontrar promedio y elnazar con views
         maximo=max(precios)
         producto.precio_maximo=maximo
-        print(maximo)
         minimo=min(precios)
         producto.precio_minimo=minimo  
         tope_minimo=maximo*0.2
-        print(tope_minimo)
         for precio in precios:
             if(precio < tope_minimo):
                 precios.remove(precio)
