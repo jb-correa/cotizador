@@ -41,7 +41,7 @@ async def busqueda(request, producto):
         input.click()
         input.clear()
 
-        #Aqui hay que insertar el nombre del objeto ingresado en el sitio
+        
         input.send_keys(producto.nombre)
         button=driver.find_element(By.XPATH,"//div[@aria-label='Buscar']")
         button.click()
@@ -49,6 +49,7 @@ async def busqueda(request, producto):
         precios=[]
         numeros=driver.find_elements(By.CLASS_NAME, "andes-money-amount__fraction")
 
+        #Metodo
         #Quita el punto del precio y convierte en int
         for numero in numeros:
             numero=numero.text.replace(".", "")
