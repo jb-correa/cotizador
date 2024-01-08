@@ -30,7 +30,7 @@ def loading(request):
 
     return render(request, 'sitio_web/loading.html')
 
-
+#Comentario para guardar cambios
 async def busqueda(request, producto):
     
     async with httpx.AsyncClient():
