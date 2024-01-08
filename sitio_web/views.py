@@ -49,8 +49,7 @@ async def busqueda(request, producto):
         precios=[]
         numeros=driver.find_elements(By.CLASS_NAME, "andes-money-amount__fraction")
 
-        #Metodo
-        #Quita el punto del precio y convierte en int
+        #Metodo que quita el punto del precio y convierte en int
         for numero in numeros:
             numero=numero.text.replace(".", "")
             numero=int(numero)
