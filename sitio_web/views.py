@@ -30,7 +30,7 @@ def loading(request):
 
     return render(request, 'sitio_web/loading.html')
 
-
+#Método asincrónico para busqueda de precios
 async def busqueda(request, producto):
     
     async with httpx.AsyncClient():
