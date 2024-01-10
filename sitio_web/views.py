@@ -1,6 +1,6 @@
 
 from django.db import models
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .models import productoForm, Producto
 from .script import busqueda
 from selenium.webdriver.common.by import By
