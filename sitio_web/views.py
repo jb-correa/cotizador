@@ -15,25 +15,21 @@ def home(request):
             
             producto=form.save()
             print(producto)
-            
-
             return ("Loading")
         
     return render(request, 'sitio_web/home.html', {"form": form}) 
 
 def loading(request):
     producto=Producto.objects.last()
-    nombre_producto=producto.nombre
 
-    producto=busqueda(request, nombre_producto)
+    producto=busqueda(request, producto)
     producto.save()
 
     return render(request, 'sitio_web/loading.html')
 
 #Método asincrónico para busqueda de precios
-async def busqueda(request, nombre_producto):
-    producto=Producto()
-    producto.nombre=nombre_producto
+async def busqueda(request, producto):
+    
     async with httpx.AsyncClient():
         driver = webdriver.Chrome()
         driver.get("http://www.mercadolibre.com.ar")
@@ -43,7 +39,7 @@ async def busqueda(request, nombre_producto):
         input.clear()
         
         
-        input.send_keys(nombre_producto)
+        input.send_keys(producto.nombre)
         button=driver.find_element(By.XPATH,"//div[@aria-label='Buscar']")
         button.click()
 
@@ -71,10 +67,11 @@ async def busqueda(request, nombre_producto):
         producto.precio_promedio=sum(precios)/len(precios)
         producto.precios(precios)
     
+        producto.save()
 
         driver.close()
 
-        return producto
+        
     
 
 
