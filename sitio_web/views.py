@@ -14,7 +14,7 @@ def home(request):
         if form.is_valid():
             
             producto=form.save()
-            print(producto)
+            #print(producto)
             return ("Loading")
         
     return render(request, 'sitio_web/home.html', {"form": form}) 
@@ -22,6 +22,7 @@ def home(request):
 #Pagina con loading mientras se hace la busqueda
 def loading(request):
     producto=Producto.objects.last()
+    print(producto)
 
     producto=busqueda(request, producto)
     producto.save()
