@@ -19,6 +19,7 @@ def home(request):
         
     return render(request, 'sitio_web/home.html', {"form": form}) 
 
+#Pagina con loading mientras se hace la busqueda
 def loading(request):
     producto=Producto.objects.last()
 
@@ -70,9 +71,6 @@ async def busqueda(request, producto):
         producto.save()
 
         driver.close()
-
-        
-    
 
 
 def resultado(request):
