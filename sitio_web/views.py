@@ -22,7 +22,8 @@ def home(request):
 
 #Pagina con loading mientras se hace la busqueda
 def loading(request):
-    producto=Producto.objects.last()
+    productos=Producto.objects.all()
+    producto=productos[len(productos)-1]
     print(producto)
 
     producto=busqueda(request, producto)
