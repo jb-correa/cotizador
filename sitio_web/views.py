@@ -7,6 +7,7 @@ from django.http import JsonResponse
 import httpx
 from selenium import webdriver
 
+#Landing page
 def home(request):
     form=productoForm()
     if request.method == 'POST':
