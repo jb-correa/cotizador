@@ -15,6 +15,7 @@ def home(request):
         if form.is_valid():
             
             producto=form.save()
+            print(producto)
             
             return ("Loading")
         
@@ -67,7 +68,6 @@ async def busqueda(request, producto):
             if(precio < tope_minimo):
                 precios.remove(precio)
 
-        print(precios)
         producto.precio_promedio=sum(precios)/len(precios)
         producto.precios(precios)
     
