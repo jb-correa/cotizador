@@ -15,7 +15,7 @@ def home(request):
         if form.is_valid():
             
             producto=form.save()
-            #print(producto)
+            
             return ("Loading")
         
     return render(request, 'sitio_web/home.html', {"form": form}) 
