@@ -21,19 +21,11 @@ def home(request):
         
     return render(request, 'sitio_web/home.html', {"form": form}) 
 
-#Pagina con loading mientras se hace la busqueda
-def loading(request):
-    productos=Producto.objects.all()
-    producto=productos[len(productos)-1]
-    print(producto)
-
-    producto=busqueda(request, producto)
-    producto.save()
-
-    return render(request, 'sitio_web/loading.html')
 
 #Método asincrónico para busqueda de precios
-async def busqueda(request, producto):
+async def busqueda(request):
+
+    productos=Producto.objects.all()
     
     async with httpx.AsyncClient():
         driver = webdriver.Chrome()
