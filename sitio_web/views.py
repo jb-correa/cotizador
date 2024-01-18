@@ -17,7 +17,7 @@ def home(request):
             producto=form.save()
             print(producto)
             
-            return ("Loading")
+            return ("Resultado")
         
     return render(request, 'sitio_web/home.html', {"form": form}) 
 
@@ -26,7 +26,7 @@ def home(request):
 async def busqueda(request):
 
     productos=Producto.objects.all()
-    
+    producto=productos[len(productos)-1]
     async with httpx.AsyncClient():
         driver = webdriver.Chrome()
         driver.get("http://www.mercadolibre.com.ar")
