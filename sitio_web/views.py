@@ -50,7 +50,7 @@ async def busqueda(request):
             precios.append(numero)
 
         #Quita precios falopa sacando menores al 30% del maximo
-        #No esta funcionando
+        #No estaría funcionando
         maximo=max(precios)
         producto.precio_maximo=maximo
         minimo=min(precios)
