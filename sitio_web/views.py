@@ -36,7 +36,7 @@ async def busqueda(request):
         input.clear()
         
         
-        input.send_keys(producto.nombre)
+        input.send_keys('telefono samsung')
         button=driver.find_element(By.XPATH,"//div[@aria-label='Buscar']")
         button.click()
 
