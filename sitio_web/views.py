@@ -15,7 +15,7 @@ def home(request):
         if form.is_valid():
             
             producto=form.save()
-            print(producto)
+            
             
             return ("Resultado")
         
@@ -23,7 +23,7 @@ def home(request):
 
 
 #Método asincrónico para busqueda de precios
-async def busqueda(request):
+def busqueda(request):
 
     productos=Producto.objects.all()
     producto=productos[len(productos)-1]
