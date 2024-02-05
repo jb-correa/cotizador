@@ -17,7 +17,7 @@ def home(request):
             producto=form.save()
             
             
-            return ("Resultado")
+            return ("Resultado",{"producto", producto})
         
     return render(request, 'sitio_web/home.html', {"form": form}) 
 
