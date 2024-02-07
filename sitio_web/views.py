@@ -13,7 +13,7 @@ def home(request):
     if request.method == 'POST':
         form=productoForm(request.POST)
         if form.is_valid():
-            
+            producto=Producto()
             producto=form.save()
             
             
