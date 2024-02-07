@@ -10,12 +10,12 @@ from selenium import webdriver
 #Landing page
 def home(request):
     form=productoForm()
+    producto=Producto()
     if request.method == 'POST':
         form=productoForm(request.POST)
         if form.is_valid():
-            producto=Producto()
-            producto=form.save()
             
+            producto=form.save()
             
             return ("Resultado",{"producto": producto})
         
