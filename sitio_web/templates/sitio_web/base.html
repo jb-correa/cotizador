@@ -15,11 +15,14 @@
     <!-- Styles -->
     <link href="{% static 'sitio_web/css/gestion.css' %}" rel="stylesheet">
 </head>
+
 <body>
+
   <header class="masthead text-center text-white">
     <div class="masthead-content">
       <div class="container">
-        <h1 class="masthead-heading mb-0" style="text-align: center;">Bienvenido a tu cotizador online</h1>
+        <h1 class="masthead-heading mb-0">Bienvenido al cotizador online</h1>
+        <a style="color: white" href="{% url 'Home' %}"> <h2 class="masthead-subheading mb-0">Tu balanza de calorías</h2></a>
       </div>
     </div>
     
@@ -34,7 +37,7 @@
 
 {% endblock %}
 
-    <footer class="footer text-faded text-center py-5" style="background-color: #60C43E; margin-top: 500px">
+    <footer class="footer text-faded text-center py-5" style="background-color: #60C43E; margin-top: 400px;">
         <div class="container">
           <p class="m-0">
               <a href="#" class="link">
@@ -61,15 +64,15 @@
               <a href="sample.html" class="link">Aviso legal</a> ·
               <a href="sample.html" class="link">Cookies</a>
           </p>
-          <p class="m-0 mbt1">&copy; Cotizador online 2024</p>
+          <p class="m-0 mbt1">&copy; Cotizador online 2023</p>
         </div>
       </footer>
   
-    <!-- Bootstrap -->
-    <script src="{% static 'sitio_web/vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'sitio_web/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="bootstrap.bundle.min.js / bootstrap.bundle.js"></script>
+      <!-- Bootstrap -->
+      <script src="{% static 'sitio_web/vendor/jquery/jquery.min.js' %}"></script>
+      <script src="{% static 'sitio_web/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="bootstrap.bundle.min.js / bootstrap.bundle.js"></script>
       
   
   </body>
