@@ -1,0 +1,89 @@
+<html>
+
+<head>
+
+  <title>Inicio</title>
+
+</head>
+
+{% extends "sitio_web/base.html" %}
+
+<body>
+
+  
+
+    {% load static %}
+
+    {% block content %}
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="static/sitio_web/img/IMG-comida.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="p-5">
+              <h2 class="display-4" style="color: white;">Ingresa los alimentos que comiste</h2>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="static/sitio_web/img/IMG-ejercicio.jpeg" alt="" >
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="p-5">
+              <h2 class="display-4" style="color: white;">Ingresa tu rutina de ejercicios</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>  
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="static/sitio_web/img/vida-sana.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="p-5">
+              <h2 class="display-4" style="color: white;">Ingresa los alimentos que comiste</h2>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-5">
+            {% if user.is_authenticated %}
+            <div class="p-5">
+              <a style="color: white;margin-bottom: 10px;"class="btn btn-success" href="{% url 'sesion_ejercicio' %}">Comenzar</a>
+            </div>
+            {% else %}
+            <div class="alert alert-danger text-center">
+               Debes iniciar sesión para comenzar
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>     
+
+    {% endblock %}
+
+</body>
