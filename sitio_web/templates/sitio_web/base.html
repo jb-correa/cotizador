@@ -29,59 +29,7 @@
   </header>
   </div>
 
-  <div style="text-align: right; margin-right: 100 px; color: white">
-    {% if user.is_authenticated %}
-      <p>Hola, {{user.username}}</p>
   
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle mb-4" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black; margin-left: 30px;">
-        Mi cuenta
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="{% url 'Perfil' %}">Perfil</a>
-        <a class="dropdown-item" href="{% url 'Historial' %}">Historial de balanzas</a>
-        <a class="dropdown-item" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a>
-      </div>
-    </div>
-    {% else %}
-      <a class="nav-link active" style="color:white; text-align: right;" aria-current="page" href="{% url 'loguear' %}">Login</a>
-      <a class="nav-link active" style="color:white; text-align: right;" aria-current="page" href="{% url 'Autenticacion' %}">Registrate</a>
-      {% endif %}
-  </div>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #60C43E;">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      {% if user.is_authenticated %}
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin: auto">
-          <li class="nav-item">
-            <button class="btn btn-success" style="margin-bottom:15px; margin-right: 15px; color: white;">
-              <a href="{% url 'Porcion' %}" class="btn btn success" style="color: white">Contanos que comiste hoy</a>
-            </button>
-          <li class="nav-item">
-            <button class="btn btn-success" style="margin-bottom:15px; margin-left: 15px; margin-right: 15px; color: white">
-              <a href="{% url 'sesion_ejercicio' %}" class="btn btn success" style="color: white">Contanos como te ejercitaste</a>
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-success" style="margin-bottom:15px;  margin-left: 15px; margin-right: 15px; color: white">
-              <a href="{% url 'Balanza' %}" class="btn btn success" style="color: white">Vamos directo a la balanza</a>
-            </button>            
-          </li>
-        </ul>
-      </div>
-      {% else %}
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="text-align: right; margin-right: 100 px; color: white">
-          <li class="nav-item">
-            <div class="alert alert-danger" style="text-align: right;">
-              Debes iniciar sesión para ver las opciones
-            </div>
-          </li>
-        </ul>
-      {% endif %}
-      </div>
-    </div>
-  </nav>
     
 {% block content %}
 
