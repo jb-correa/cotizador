@@ -9,15 +9,15 @@ from selenium import webdriver
 
 #Landing page
 def home(request):
-    #form=productoForm()
-    #producto=Producto()
-    #if request.method == 'POST':
-    #    form=productoForm(request.POST)
-    #    if form.is_valid():
+    form=productoForm()
+    producto=Producto()
+    if request.method == 'POST':
+        form=productoForm(request.POST)
+        if form.is_valid():
             
-    #        producto=form.save()
+            producto=form.save()
             
-    #        return ("Resultado",{"producto": producto})
+            return ("Resultado",{"producto": producto})
         
     return render(request, 'sitio_web/home.html') 
 
