@@ -17,9 +17,9 @@ def home(request):
             
             producto=form.save()
             
-            return ("Resultado",{"form": form})
+            return ("Resultado")
         
-    return render(request, 'sitio_web/home.html') 
+    return render(request, 'sitio_web/home.html',{"form": form}) 
 
 
 #Método asincrónico para busqueda de precios
