@@ -59,14 +59,14 @@ def busqueda(request):
         if(precio < tope_minimo):
             precios.remove(precio)
 
-#    producto.precio_promedio=sum(precios)/len(precios)
-#    producto.precios(precios)
-    
-#    producto.save()
-#    driver.close()
+    producto.precio_promedio=sum(precios)/len(precios)
+    producto.precios(precios)
+   
+    producto.save()
+    driver.close()
 
 
 def resultado(request):
-    #precios=Producto.objects.all()
+    precios=Producto.objects.all()
 
     return render(request, 'sitio_web/resultado.html'  )
