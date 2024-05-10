@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a tu cotizador online</title>
+    
+</head>
+{% extends "sitio_web/base.html" %}
+
+<body>
+
+  
+
+    {% load static %}
+
+    {% load crispy_forms_tags %}
+
+    {% block content %}
+    
+<h3 style="text-align: center; margin-top: 30px;"> <a href="{% url 'Home' %}" style="color: black;">
+    Bienvenido a tu cotizador online
+</a>
+</h3>
+
+<form action="" method="post" style="color: black; text-align: center;">
+    {% csrf_token %}
+    <h6 style="text-align: center; margin-top: 30px;">Sé lo más específico que puedas</h6>
+    <h6 style="text-align: center;">De esa forma tu búsqueda será más acertada</h6>
+    <div style="width: 50%; margin: auto;">
+    {{form|crispy}}
+   
+    <button type="submit" class="btn btn-success" style="text-align: center;">Ingresar
+    </button>
+    </div>
+</form>
+
+
+
+
+    {% endblock %}
+</body>
+</html>

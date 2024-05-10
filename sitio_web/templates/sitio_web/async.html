@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a tu cotizador online</title>
+</head>
+{% extends "sitio_web/base.html" %}
+
+<body>
+
+  
+
+    {% load static %}
+
+    {% load crispy_forms_tags %}
+
+    {% block content %}
+    
+<h3 style="text-align: center; margin-top: 30px;"> <a href="{% url 'Home' %}" style="color: black;">
+    Bienvenido a tu cotizador online
+</a>
+</h3>
+
+<h5 style="text-align: center; margin-top: 30px;"> Por favor espera mientras hacemos tu busqueda</h5>
+
+<div id="loading" style="text-align: center; margin-top: 200px;">
+    <img id="loading-image" src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif?20170503175831" alt="Loading..." />
+  </div>
+
+
+    {% endblock %}
+</body>
+</html>
