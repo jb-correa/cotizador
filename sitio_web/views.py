@@ -30,6 +30,10 @@ async def async_view(request):
     p=Precios()
     p=await script() 
     
+    p=Precios.objects.order_by("fecha")
+    p=p[len(p)-1]
+    if p:
+        redirect ('Resultado')
     
     return render(request, 'sitio_web/async.html')
 
