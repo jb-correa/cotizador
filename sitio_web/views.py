@@ -27,15 +27,21 @@ def home (request):
 
 
 async def async_view(request):
+    control=0
     p=Precios()
     p=await script() 
+    control+=1
+    if control>0:
+        return redirect('Resultado')
+
     
-    p=Precios.objects.order_by("fecha")
-    p=p[len(p)-1]
-    if p:
-        redirect ('Resultado')
     
     return render(request, 'sitio_web/async.html')
+
+
+def resultado(request):
+
+    return render(request, 'situi_web/resultado.html')
 
 @sync_to_async
 def script():
