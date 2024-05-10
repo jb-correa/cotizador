@@ -27,9 +27,10 @@ def home (request):
 
 
 async def async_view(request):
-    form=ProductoForm()
     precios=[]
-    precios= await script()    
+    precios= await script()   
+    if precios:
+        redirect ('Resultado') 
     
     return render(request, 'sitio_web/async.html')
 
