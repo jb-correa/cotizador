@@ -27,10 +27,9 @@ def home (request):
 
 
 async def async_view(request):
-    precios=[]
-    precios= await script()   
-    if precios:
-        redirect ('Resultado') 
+    p=Precios()
+    p=await script() 
+    
     
     return render(request, 'sitio_web/async.html')
 
@@ -77,6 +76,6 @@ def script():
     p.save()
     
     driver.close()
-    return precios
+    return p
 
             
