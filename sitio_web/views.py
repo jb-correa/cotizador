@@ -27,15 +27,16 @@ def home (request):
 
 
 async def async_view(request):
-    p=Precios()
-    p=await script() 
+    
+    await script() 
+
        
-    return render(request, 'sitio_web/async.html')
+    return redirect ("Resultado")
 
 
 def resultado(request):
 
-    return render(request, 'situi_web/resultado.html')
+    return render(request, 'sitio_web/resultado.html')
 
 @sync_to_async
 def script():
