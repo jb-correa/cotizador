@@ -27,15 +27,9 @@ def home (request):
 
 
 async def async_view(request):
-    control=0
     p=Precios()
     p=await script() 
-    control+=1
-    if control>0:
-        return redirect('Resultado')
-
-    
-    
+       
     return render(request, 'sitio_web/async.html')
 
 
