@@ -31,7 +31,7 @@ async def async_view(request):
     await script() 
 
        
-    return redirect ("Resultado")
+    return render(request, "sitio_web/resultado.html")
 
 
 def resultado(request):
