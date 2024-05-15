@@ -26,9 +26,17 @@ def home (request):
 async def async_view(request):
     
     await script() 
-
+    precios=datos() 
        
-    return render(request, "sitio_web/resultado.html")
+    return render(request, "sitio_web/resultado.html", {"precios": precios})
+
+@sync_to_async
+def datos(request):
+
+    precios=Precios.objects.order_by("fecha")
+    precios=precios[len(precios)-1]
+
+    return precios
 
 
 @sync_to_async
