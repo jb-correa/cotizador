@@ -31,10 +31,6 @@ async def async_view(request):
     return render(request, "sitio_web/resultado.html")
 
 
-def resultado(request):
-
-    return render(request, 'sitio_web/resultado.html')
-
 @sync_to_async
 def script():
     driver = webdriver.Chrome()
