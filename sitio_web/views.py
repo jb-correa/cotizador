@@ -10,9 +10,6 @@ from asgiref.sync import sync_to_async
 import  asyncio
 
 
-
-#Creacion de producto funciona bien
-#Ahora hay que integrar el script
 def home (request):
     form=ProductoForm()
     if request.method=='POST':
