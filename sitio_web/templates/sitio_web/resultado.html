@@ -41,7 +41,9 @@
 
 <h5 style="color: white; margin-bottom: 300px;margin-top: 30px; text-align: center;">Aquí están todos los precios encontrados</h5>
 
-<p></p>
+<p>$ {% for key, value in request.session.precios.items %}
+    {{value.precios.producto}}
+  {% endfor %}</p>
 
 
     {% endblock %}
