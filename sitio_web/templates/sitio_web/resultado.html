@@ -45,7 +45,9 @@
     {% if request.session.precios.items %}
     {% for key, value in request.session.precios.items %}
       {{value.precios}}
-    {% endfor %}</p>
+    {% endfor %}
+    {% endif %}
+  </p>
 
 
     {% endblock %}
