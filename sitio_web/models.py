@@ -19,7 +19,7 @@ class ProductoForm(ModelForm):
 
 class Precios(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
-    precios = models.CharField(max_length=500)
+    lista = models.CharField(max_length=500)
     fecha=models.DateField(auto_now_add=True)
     class Meta:
         verbose_name='Precio'
@@ -32,5 +32,5 @@ class Precios(models.Model):
 class PreciosForm(ModelForm):
     class Meta:
         model=Precios
-        fields=[ "precios"]    
+        fields=[ "lista"]    
     

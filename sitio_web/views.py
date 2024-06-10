@@ -25,10 +25,10 @@ def home (request):
 
 async def async_view(request):
     
-    await script() 
+    p=await script() 
     precios=datos() 
        
-    return render(request, "sitio_web/resultado.html", {"precios": precios})
+    return render(request, "sitio_web/resultado.html", {"precios": p})
 
 @sync_to_async
 def datos(request):
@@ -78,7 +78,7 @@ def script():
     
     p=Precios()
     p.producto=producto
-    p.precios=precios
+    p.lista=precios
     p.save()
     
     driver.close()
