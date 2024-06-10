@@ -7,7 +7,7 @@ class ProductoAdmin(admin.ModelAdmin):
 
 
 class PreciosAdmin(admin.ModelAdmin):
-    readonly_fields=("fecha", "precios", "producto")
+    readonly_fields=("fecha", "lista", "producto")
 
 
 
