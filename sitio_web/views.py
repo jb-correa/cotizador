@@ -28,7 +28,7 @@ async def async_view(request):
     p=await script() 
     precios=datos() 
      #Intentar con el resultado de datos()
-    return render(request, "sitio_web/resultado.html", {"precios": precios})
+    return render(request, "sitio_web/resultado.html", {"lista": precios})
 
 @sync_to_async
 def datos(request):
