@@ -27,9 +27,9 @@ async def async_view(request):
     
     p=await script() 
     precios=datos() 
-    minimo=min(p)
-    maximo=max(p)
-    promedio=sum(p)/len(p)
+    minimo=min(p.lista)
+    maximo=max(p.lista)
+    promedio=sum(p.lista)/len(p.lista)
 
     return render(request, "sitio_web/resultado.html", {"lista": precios, "minimo": minimo,
                                                         "maximo": maximo, "promedio": promedio})
