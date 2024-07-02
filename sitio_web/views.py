@@ -31,7 +31,7 @@ async def async_view(request):
     maximo=max(p.lista)
     promedio=sum(p.lista)/len(p.lista)
 
-    return render(request, "sitio_web/resultado.html", {"lista": precios.lista, "minimo": minimo,
+    return render(request, "sitio_web/resultado.html", {"lista": p.lista, "minimo": minimo,
                                                         "maximo": maximo, "promedio": promedio})
 
 @sync_to_async
