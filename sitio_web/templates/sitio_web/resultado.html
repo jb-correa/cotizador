@@ -41,11 +41,12 @@
 
 <h5 style="color: white; margin-bottom: 300px;margin-top: 30px; text-align: center;">Aquí están todos los precios encontrados</h5>
 
+{% for precio in lista %}
+<p style="color: white; margin-bottom: 300px;margin-top: 30px; text-align: center;">
+    {value.precio}
+</p>>  
 
-<p style="color: white; margin-bottom: 300px;margin-top: 30px; text-align: center;"></p>>  
-
-
-</p>
+{% endfor %}
 
 
     {% endblock %}
